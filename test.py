@@ -1,11 +1,14 @@
 def add(a, b):
     return a + b
 
+
 def hello_world():
     return "Hello, World!"
 
+
 def greet(name):
     return f"Hello, {name}!"
+
 
 def calculate_sum():
     result1 = add(1, 2)
@@ -15,11 +18,13 @@ def calculate_sum():
     result5 = add(9, 10)
     return result1 + result2 + result3 + result4 + result5
 
+
 def process_data():
     x = add(100, 200)
     y = add(x, 50)
     z = add(y, 25)
     return add(z, 10)
+
 
 def main():
     message = hello_world()
@@ -32,6 +37,7 @@ def main():
     print(f"Processed: {processed}")
     final = add(total, processed)
     print(f"Final: {final}")
+
 
 if __name__ == "__main__":
     main()
