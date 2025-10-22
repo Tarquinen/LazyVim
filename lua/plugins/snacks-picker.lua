@@ -14,9 +14,18 @@ return {
   opts = {
     picker = {
       sources = {
+        diagnostics = {
+          on_show = function(picker)
+            picker:focus("list")
+          end,
+        },
+        git_status = {
+          on_show = function(picker)
+            picker:focus("list")
+          end,
+        },
         lsp_references = {
           on_show = function(picker)
-            -- Focus the list instead of input when picker opens
             picker:focus("list")
           end,
         },
