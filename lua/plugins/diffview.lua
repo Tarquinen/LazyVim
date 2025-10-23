@@ -10,7 +10,7 @@ return {
   },
   keys = {
     { "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "Open diffview" },
-    { "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
+    { "<leader>gH", "<cmd>DiffviewFileHistory %<cr>", desc = "File history" },
   },
   opts = {
     use_icons = true,
