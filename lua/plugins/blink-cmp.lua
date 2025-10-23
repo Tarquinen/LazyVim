@@ -2,7 +2,7 @@ return {
   "saghen/blink.cmp",
   opts = {
     fuzzy = {
-      implementation = "prefer_rust_with_warning",
+      implementation = "prefer_rust",
     },
     keymap = {
       -- preset = "enter",
