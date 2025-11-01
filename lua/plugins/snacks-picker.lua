@@ -44,6 +44,26 @@ return {
             picker:focus("list")
           end,
         },
+        gh_pr = {
+          on_show = function(picker)
+            picker:focus("list")
+          end,
+        },
+        gh_issue = {
+          on_show = function(picker)
+            picker:focus("list")
+          end,
+        },
+        gh_diff = {
+          on_show = function(picker)
+            picker:focus("list")
+          end,
+        },
+        gh_actions = {
+          on_show = function(picker)
+            picker:focus("list")
+          end,
+        },
       },
     },
   },
