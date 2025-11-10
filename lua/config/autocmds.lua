@@ -25,7 +25,12 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function(args)
     local bufname = vim.api.nvim_buf_get_name(args.buf)
-    if bufname:match("^diffview://") or bufname:match("^fugitive://") or bufname:match("^LOCAL:") or bufname:match("^REMOTE:") then
+    if
+      bufname:match("^diffview://")
+      or bufname:match("^fugitive://")
+      or bufname:match("^LOCAL:")
+      or bufname:match("^REMOTE:")
+    then
       vim.schedule(function()
         local clients = vim.lsp.get_clients({ bufnr = args.buf })
         for _, client in ipairs(clients) do

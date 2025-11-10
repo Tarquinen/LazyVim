@@ -18,5 +18,8 @@ map("n", "<F2>", "<cmd>q<cr>", { desc = "Quit", noremap = true, silent = true })
 map("n", "<F3>", ":qa!<CR>", { desc = "Force Quit", noremap = true, silent = true })
 
 -- Window resizing
-map("n", "<A-h>", ":vertical resize -2<CR>", { desc = "Make window narrower" })
-map("n", "<A-l>", ":vertical resize +2<CR>", { desc = "Make window wider" })
+map("n", "<A-l>", ":vertical resize -2<CR>", { desc = "Make window narrower" })
+map("n", "<A-h>", ":vertical resize +2<CR>", { desc = "Make window wider" })
+
+-- Split window right (override LazyVim default)
+map("n", "<leader>\\", "<C-w>v", { desc = "Split Window Right" })
