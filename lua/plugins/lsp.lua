@@ -9,8 +9,30 @@ return {
             {
               "gd",
               function()
-                vim.cmd.vsplit()
-                vim.lsp.buf.definition()
+                -- Save the current window
+                local current_win = vim.api.nvim_get_current_win()
+
+                -- Get active LSP client for offset encoding
+                local clients = vim.lsp.get_clients({ bufnr = 0 })
+                if #clients == 0 then
+                  vim.notify("No LSP client attached", vim.log.levels.WARN)
+                  return
+                end
+                local client = clients[1]
+
+                -- Request definition
+                local params = vim.lsp.util.make_position_params(current_win, client.offset_encoding)
+                vim.lsp.buf_request(0, "textDocument/definition", params, function(err, result)
+                  if err or not result or vim.tbl_isempty(result) then
+                    vim.notify("No definition found", vim.log.levels.WARN)
+                    return
+                  end
+
+                  -- Definition found, create split and navigate
+                  vim.api.nvim_set_current_win(current_win)
+                  vim.cmd.vsplit()
+                  vim.lsp.util.show_document(result[1] or result, client.offset_encoding, { focus = true })
+                end)
               end,
               desc = "Goto Definition (Right Split)",
               has = "definition",
