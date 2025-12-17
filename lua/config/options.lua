@@ -8,3 +8,8 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.swapfile = false
+
+-- Line wrapping
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true

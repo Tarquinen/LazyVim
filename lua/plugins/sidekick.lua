@@ -1,6 +1,10 @@
 return {
   "folke/sidekick.nvim",
   opts = {
+    -- Disable NES (Next Edit Suggestions) - requires GitHub Copilot
+    nes = { enabled = false },
+    -- Disable Copilot status tracking
+    copilot = { status = { enabled = false } },
     cli = {
       win = {
         keys = {

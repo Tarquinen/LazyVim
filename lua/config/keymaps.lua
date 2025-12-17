@@ -13,9 +13,10 @@ map("n", "<leader>q", function()
 end, { desc = "Delete Buffer" })
 
 -- Map F keys
-map("n", "<F1>", "<cmd>w<cr><esc>", { desc = "Save", noremap = true, silent = true })
-map("n", "<F2>", "<cmd>q<cr>", { desc = "Quit", noremap = true, silent = true })
-map("n", "<F3>", ":qa!<CR>", { desc = "Force Quit", noremap = true, silent = true })
+map("n", "<F1>", "<cmd>noautocmd w<cr>", { desc = "Save", noremap = true, silent = true })
+map("n", "<F2>", "<cmd>LazyFormat<cr>", { desc = "Format", noremap = true, silent = true })
+map("n", "<F3>", "<cmd>q<cr>", { desc = "Close", noremap = true, silent = true })
+map("n", "<F4>", "<cmd>qa!<cr>", { desc = "Close All", noremap = true, silent = true })
 
 -- Window resizing
 map("n", "<A-l>", ":vertical resize -2<CR>", { desc = "Make window narrower" })
